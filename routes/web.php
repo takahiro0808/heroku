@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('news/create', 'Admin\NewsController@add');
@@ -42,8 +42,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 });
 
 //追記：上記応用をグループ化しました。
-
-    
  
 Auth::routes();
 
@@ -51,7 +49,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'NewsController@index');
 Route::get('profile', 'ProfileController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
