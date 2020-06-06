@@ -42,7 +42,7 @@ class NewsController extends Controller
     $news->fill($form);
     $news->save();
       
-    return redirect('admin/news/create');
+    return redirect('/');
   }
   
   //以下を追記
